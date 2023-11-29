@@ -2,10 +2,10 @@
  * Operating Systems  (2INCO)  Practical Assignment
  * Interprocess Communication
  *
- * STUDENT_NAME_1 (STUDENT_NR_1)
+ * Ayudh Haldar (1694618)
  * STUDENT_NAME_2 (STUDENT_NR_2)
  *
- * Grading:
+ * Grading: 
  * Your work will be evaluated based on the following criteria:
  * - Satisfaction of all the specifications
  * - Correctness of the program
@@ -33,9 +33,22 @@ char client2dealer_name[20] = "/client2dealer";
 char dealer2worker1_name[20] = "/dealer2worker1";
 char dealer2worker2_name[20] = "/dealer2worker2";
 char worker2dealer_name[20] = "/worker2dealer";
+char myname[20] = "Ayudh";
+
+void initializeQueueNames() {
+    pid_t pid = getpid();
+    sprintf(client2dealer_name, "Req_queue_%s%d", myname, pid);
+    sprintf(dealer2worker1_name, "S1_queue_%s%d", myname, pid);
+    sprintf(dealer2worker2_name, "S2_queue_%s%d", myname, pid);
+    sprintf(worker2dealer_name, "Rsp_queue_%s%d", myname, pid);
+
+}
+
 
 int main (int argc, char * argv[])
 {
+      initializeQueueNames(); 
+
   if (argc != 1)
   {
     fprintf (stderr, "%s: invalid arguments\n", argv[0]);
