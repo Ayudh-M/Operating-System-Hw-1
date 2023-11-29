@@ -3,7 +3,7 @@
  * Interprocess Communication
  *
  * Ayudh Haldar (1694618)
- * STUDENT_NAME_2 (STUDENT_NR_2)
+ * Abbas Hussain (1654411)
  *
  * Grading: 
  * Your work will be evaluated based on the following criteria:
